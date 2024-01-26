@@ -19,10 +19,17 @@ const { Header, Content, Footer } = Layout;
 //         key: "/login"
 //     }
 // ]
+
+
+
+
 const Navbar = () => {
+
     const {
         token: { colorBgContainer, borderRadiusLG },
     } = theme.useToken();
+
+    const locationRef = window.location.pathname;
     return (
         <Layout>
             <Header
@@ -47,12 +54,12 @@ const Navbar = () => {
                     }}
                 /> */}
                 <div>
-                    <div style={{color : "white" , display : "flex" , gap : "30px"}}>
-                        <span style={{cursor : "pointer"}}><Link to="/home"> Home </Link></span>
-                        <span style={{cursor : "pointer"}}> <Link to="/About">About </Link></span>
-                        <span style={{cursor : "pointer"}}><Link to="/login"> Login </Link></span>
-                        <span style={{cursor : "pointer"}}> <Link to="/Signup">SignUp </Link></span>
-                        <span style={{cursor : "pointer"}}><Link to="/logout"> LogOut </Link></span>
+                    <div style={{ color: "white", display: "flex", gap: "30px" }}>
+                        <span style={{ cursor: "pointer" }}><Link to="/home"> Home </Link></span>
+                        <span style={{ cursor: "pointer" }}> <Link to="/About">About </Link></span>
+                        <span style={{ cursor: "pointer" }}><Link to="/login"> Login </Link></span>
+                        <span style={{ cursor: "pointer" }}> <Link to="/Signup">SignUp </Link></span>
+                        <span style={{ cursor: "pointer" }}><Link to="/logout"> LogOut </Link></span>
                     </div>
                 </div>
             </Header>
@@ -61,7 +68,7 @@ const Navbar = () => {
                     padding: '0 48px',
                 }}
             >
-        
+
                 <div
                     style={{
                         padding: 24,
@@ -70,7 +77,7 @@ const Navbar = () => {
                         borderRadius: borderRadiusLG,
                     }}
                 >
-                    Home
+                    Search {locationRef.toUpperCase()}
                 </div>
             </Content>
             <Footer
