@@ -77,7 +77,7 @@ const Navbar = () => {
                         borderRadius: borderRadiusLG,
                     }}
                 >
-                    Search {locationRef.toUpperCase()}
+                    {locationRef.toUpperCase()}
                 </div>
             </Content>
             <Footer
